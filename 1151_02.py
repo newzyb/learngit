@@ -1,15 +1,16 @@
 """
 知识点：
 1、has a
-一个类中使用了另外一种自定义的类型
-student使用computer、book
+    一个类中使用了另外一种自定义的类型
+    student使用computer、book
+
 2、类型：
-系统类型：
-    str 、int、 float、 list 、 dict、tuple 、set
-自定义类型：
-    算是自定义的类，都可以将其当成一种类型
-    s = Student()
-    s 是 Student类型的对象
+    系统内置类型：
+        str 、int、 float、 list 、 dict、tuple 、set
+    自定义类型：
+        自定义的类，都可以将其当成一种类型
+        例：s = Student()     # s 是 Student类型的对象
+
 """
 
 
@@ -33,7 +34,7 @@ class Book:
         self.number = number
 
     def __str__(self):
-        return self.bname + '---' + self.author + '---' + str(self.number)
+        return self.bname + '---' + self.author + '---' + self.number
 
 
 class Student:  # 关系就是has a
@@ -69,12 +70,13 @@ book = Book('盗墓笔记', '南派三叔', 10)
 stu = Student('songsong', computer, book)
 print(stu)
 
-# 看借了哪些书
+# 查看学生借了哪些书
+
 stu.show_book()
 
+
 book1 = Book('鬼吹灯', '天下霸唱', 8)
-
 stu.borrow_book(book1)
-print('---------------------')
 
+print('-----------目前图书馆里的存书------------')
 stu.show_book()
